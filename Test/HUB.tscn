@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://HUB.gd" type="Script" id=1]
+[ext_resource path="res://LifeBar.tscn" type="PackedScene" id=2]
+
+[node name="HUB" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Bars" type="VBoxContainer" parent="CanvasLayer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 492.0
+margin_bottom = 79.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeBar" parent="CanvasLayer/Bars" instance=ExtResource( 2 )]
+[connection signal="health_changed" from="." to="CanvasLayer/Bars/LifeBar" method="_on_HUB_health_changed"]

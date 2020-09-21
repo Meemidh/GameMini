@@ -14,7 +14,7 @@ var next_dir_time = 0
 var target_player_dist =  250
 var next_jump_time = -1
 
-
+var boss_hp = 100
 
 var dead = false
 
@@ -81,5 +81,8 @@ func _on_Timer_timeout():
 
 func _on_HitBox_area_entered(area):
 	if area.is_in_group("knives"):
-		dead = true
-		queue_free()
+		boss_hp -= 20
+		print("1 hit")
+		if boss_hp == 0:
+			dead = true
+			queue_free()

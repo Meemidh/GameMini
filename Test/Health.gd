@@ -1,27 +1,22 @@
 extends Node
 
-signal max_change(new_max)
-signal changed(new_health)
-signal depleted
+signal health_changed(health)
+signal health_depleted
 
-export(int) var max_health = 50 setget set_max
-onready var hp = max_health setget set_hp
+var health = 0
+export(int) var max_health = 100
 
 func _ready():
-	_initialize()
-func set_max(new_max):
-	max_health = new_max
-	max_health = max(1, new_max)
-	emit_signal("max_change", max_health)
+	health = max_health
+	emit_signal("health_changed",health)
 	
-func set_hp(new_value):
-	hp = new_value
-	hp = clamp(hp, 0 , max_health)
-	emit_signal("changed", hp)
+func take_damage(amount):
+	health -= amount
+	health = max(0, health)
+	emit_signal("health_changed", health)
 	
-	if hp == 0:
-		emit_signal("depleted")
-
-func _initialize():
-	emit_signal("max_health", max_health)
-	emit_signal("changed", hp)
+func heal(amount):
+	health += amount
+	health = max(health, max_health)
+	emit_signal("health_changed",health)
+	

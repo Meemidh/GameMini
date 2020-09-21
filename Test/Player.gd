@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
 
+
+
 const speed = 400
 const gravity = 30
 const jump_power = -1100
@@ -63,4 +65,5 @@ func _on_AnimatedSprite_animation_finished():
 		isAttacking = false
 	if $AnimatedSprite.animation == "jump":
 		isAttacking = false
-		
+
+
