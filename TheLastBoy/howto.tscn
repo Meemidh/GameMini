@@ -1,0 +1,178 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://เพิ่มเติม/sprite_31.png" type="Texture" id=1]
+[ext_resource path="res://ฉาก/howto2.png" type="Texture" id=2]
+[ext_resource path="res://เพิ่มเติม/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://เพิ่มเติม/sprite_30.png" type="Texture" id=4]
+[ext_resource path="res://ฟ้อน/slkscre.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://เพิ่มเติม/sprite20.png" type="Texture" id=6]
+[ext_resource path="res://เพิ่มเติม/sprite21.png" type="Texture" id=7]
+[ext_resource path="res://BACK.gd" type="Script" id=8]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "IDLE",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 45
+font_data = ExtResource( 5 )
+
+[node name="howto" type="Node2D"]
+
+[node name="CLICK" type="AnimatedSprite" parent="."]
+position = Vector2( 776, 304 )
+scale = Vector2( 3.01563, 3.01563 )
+frames = SubResource( 4 )
+animation = "IDLE"
+frame = 1
+playing = true
+
+[node name="w" type="AnimatedSprite" parent="."]
+position = Vector2( 181.5, 381.261 )
+scale = Vector2( 2.32812, 2.2269 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="A" type="AnimatedSprite" parent="."]
+position = Vector2( 183, 518.481 )
+scale = Vector2( 2.28125, 2.11227 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="D" type="AnimatedSprite" parent="."]
+position = Vector2( 183, 247 )
+scale = Vector2( 2.28125, 2.28125 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 256, 648 )
+scale = Vector2( 5.28125, 3.70614 )
+frames = SubResource( 3 )
+animation = "idle"
+playing = true
+
+[node name="SPEC" type="Label" parent="."]
+margin_left = 144.0
+margin_top = 632.0
+margin_right = 368.0
+margin_bottom = 704.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SPEC"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="W" type="Label" parent="."]
+margin_left = 152.0
+margin_top = 208.0
+margin_right = 219.0
+margin_bottom = 279.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "W"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="a" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 480.0
+margin_right = 221.0
+margin_bottom = 551.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "A"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="how" type="Label" parent="."]
+margin_left = 296.0
+margin_top = 56.0
+margin_right = 905.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "HOW TO PLAY"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="d" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 344.0
+margin_right = 221.0
+margin_bottom = 415.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "D"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="howto2" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 584, 408 )
+texture = ExtResource( 2 )
+
+[node name="BACK" type="Button" parent="."]
+margin_left = 1016.0
+margin_top = 736.0
+margin_right = 1196.0
+margin_bottom = 793.0
+custom_fonts/font = SubResource( 5 )
+toggle_mode = true
+text = "BACK"
+flat = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BACK" to="BACK" method="_on_BACK_pressed"]
