@@ -1,4 +1,4 @@
-extends Button
+extends Area2D
 
 
 # Declare member variables here. Examples:
@@ -16,8 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_start_pressed():
-	$"/root/HUD"/HpBar.visible = true 
-	$"/root/HUD".hp = 10
-	get_tree().change_scene("res://bedroom.tscn")
-
+func _on_cookie_body_entered(body):
+	if body.name == "player":
+		$"/root/HUD".hp += 5
+		queue_free()

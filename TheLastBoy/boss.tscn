@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://เพิ่มเติม/เทส2.png" type="Texture" id=1]
 [ext_resource path="res://ฉาก/มิติ.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://ฉาก/block/sokoban_tilesheet.png" type="Texture" id=6]
 [ext_resource path="res://ฉาก/Untitled-1.png" type="Texture" id=7]
 [ext_resource path="res://ฉาก/test4.png" type="Texture" id=8]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://item.gd" type="Script" id=10]
+[ext_resource path="res://32x32/pasta/noodle_macaroni.png" type="Texture" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -61,6 +64,9 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 21.6713, 31.3754 )
+
 [node name="boss" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -89,11 +95,11 @@ position = Vector2( 608.549, 396.464 )
 texture = ExtResource( 7 )
 
 [node name="test4" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1198.96, 400.954 )
+position = Vector2( 1188.78, 401.884 )
 texture = ExtResource( 8 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 265.004, 413.373 )
+position = Vector2( 262.759, 417.863 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -112,4 +118,19 @@ texture = ExtResource( 4 )
 [node name="end" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 format = 1
-tile_data = PoolIntArray( 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0 )
+
+[node name="enemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 2278.12, 597.465 )
+
+[node name="item" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="noodle_macaroni" type="Sprite" parent="item"]
+position = Vector2( 672.995, 685.017 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item"]
+position = Vector2( 671.471, 679.408 )
+shape = SubResource( 5 )
+[connection signal="body_entered" from="item" to="item" method="_on_item_body_entered"]

@@ -12,7 +12,7 @@
 [ext_resource path="res://ประตูวิน.gd" type="Script" id=10]
 [ext_resource path="res://เพิ่มเติม/book2.png" type="Texture" id=11]
 [ext_resource path="res://player.tscn" type="PackedScene" id=12]
-[ext_resource path="res://เพิ่มเติม/32x32/treat/ice_cream_sandwich_02.png" type="Texture" id=13]
+[ext_resource path="res://cookie.tscn" type="PackedScene" id=13]
 [ext_resource path="res://enemy.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -139,15 +139,14 @@ texture = ExtResource( 11 )
 position = Vector2( 1065.82, 709.84 )
 shape = SubResource( 5 )
 
+[node name="cookie" parent="." instance=ExtResource( 13 )]
+position = Vector2( 756.054, 656.643 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="enemy" parent="." instance=ExtResource( 14 )]
+position = Vector2( 721.777, 583.46 )
+
 [node name="player" parent="." instance=ExtResource( 12 )]
 position = Vector2( 243.303, 416.774 )
 scale = Vector2( 2.7, 2.7 )
-
-[node name="ice_cream_sandwich_02" type="Sprite" parent="."]
-position = Vector2( 638.075, 616.669 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 13 )
-
-[node name="enemy" parent="." instance=ExtResource( 14 )]
-position = Vector2( 776.881, 574.544 )
 [connection signal="input_event" from="block/ประตูวิน" to="block/ประตูวิน" method="_on__vindoor_input_event"]
