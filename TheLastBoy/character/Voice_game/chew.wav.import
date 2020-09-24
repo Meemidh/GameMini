@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/chew.wav-8b7f15db59671d68a355de3d30b538ab.sample"
+
+[deps]
+
+source_file="res://character/Voice_game/chew.wav"
+dest_files=[ "res://.import/chew.wav-8b7f15db59671d68a355de3d30b538ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

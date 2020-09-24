@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://ทางขึ้น.gd" type="Script" id=1]
+[ext_resource path="res://เพิ่มเติม/2.11.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 145.834, 193.28 )
+
+[node name="ลง" type="Node2D"]
+
+[node name="ทางขึ้น" type="Area2D" parent="."]
+scale = Vector2( 1.2, 1.2 )
+script = ExtResource( 1 )
+
+[node name="211" type="Sprite" parent="ทางขึ้น"]
+position = Vector2( 1812.65, 301.441 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ทางขึ้น"]
+position = Vector2( 1813.75, 307.608 )
+shape = SubResource( 4 )
+[connection signal="input_event" from="ทางขึ้น" to="ทางขึ้น" method="_on__input_event"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ตื่น.wav-145c62502d009818a04cf4d428b8547d.sample"
+
+[deps]
+
+source_file="res://character/Voice_game/ตัวเอก/ตื่น.wav"
+dest_files=[ "res://.import/ตื่น.wav-145c62502d009818a04cf4d428b8547d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
