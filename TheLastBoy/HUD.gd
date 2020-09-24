@@ -15,4 +15,4 @@ func _process(delta):
 	if hp <= 0:
 		$HpBar.visible = false 
 		$"/root/HUD".hp = 5
-		get_tree().change_scene("res://Gameover.tscn")
+		#get_tree().change_scene("res://Gameover.tscn")

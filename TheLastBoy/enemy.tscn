@@ -1,25 +1,17 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Boss/idle/1.png" type="Texture" id=1]
 [ext_resource path="res://Boss/idle/2.png" type="Texture" id=2]
 [ext_resource path="res://Boss/idle/3.png" type="Texture" id=3]
-[ext_resource path="res://Boss/run_left/5.png" type="Texture" id=4]
-[ext_resource path="res://Boss/run_left/3.png" type="Texture" id=5]
-[ext_resource path="res://Boss/run_left/7.png" type="Texture" id=6]
-[ext_resource path="res://Boss/run_left/8.png" type="Texture" id=7]
 [ext_resource path="res://Boss/run/4.png" type="Texture" id=8]
 [ext_resource path="res://enemy.gd" type="Script" id=9]
-[ext_resource path="res://Boss/run_left/6.png" type="Texture" id=10]
 [ext_resource path="res://Boss/run/3.png" type="Texture" id=11]
 [ext_resource path="res://Boss/run/2.png" type="Texture" id=12]
 [ext_resource path="res://Boss/run/8.png" type="Texture" id=13]
 [ext_resource path="res://Boss/run/6.png" type="Texture" id=14]
-[ext_resource path="res://Boss/run_left/1.png" type="Texture" id=15]
 [ext_resource path="res://Boss/run/1.png" type="Texture" id=16]
 [ext_resource path="res://Boss/run/5.png" type="Texture" id=17]
 [ext_resource path="res://Boss/run/7.png" type="Texture" id=18]
-[ext_resource path="res://Boss/run_left/2.png" type="Texture" id=19]
-[ext_resource path="res://Boss/run_left/4.png" type="Texture" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,18 +24,13 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 19 ), ExtResource( 5 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "run_left",
-"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.8995, 185.31 )
+extents = Vector2( 40.9428, 185.766 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 30.6269, 167.14 )
+extents = Vector2( 64.3729, 167.14 )
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 81.1462
@@ -54,18 +41,18 @@ script = ExtResource( 9 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.63579, 1.75409 )
 frames = SubResource( 1 )
-animation = "run_left"
-frame = 6
+animation = "Idle"
+frame = 1
 playing = true
 
 [node name="Collisionboss" type="CollisionShape2D" parent="."]
-position = Vector2( -3.21455, 10.6475 )
+position = Vector2( -16.1194, 17.0737 )
 shape = SubResource( 2 )
 
 [node name="HitBox" type="Area2D" parent="."]
 
 [node name="CollisionHitbox" type="CollisionShape2D" parent="HitBox"]
-position = Vector2( -5.43365, -3.35013 )
+position = Vector2( -5.64987, -42.9187 )
 shape = SubResource( 3 )
 
 [node name="Shoot" type="Area2D" parent="."]
@@ -77,7 +64,11 @@ shape = SubResource( 4 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="Stun_time" type="Timer" parent="."]
+wait_time = 0.5
 [connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
 [connection signal="body_entered" from="Shoot" to="." method="_on_Shoot_body_entered"]
 [connection signal="body_exited" from="Shoot" to="." method="_on_Shoot_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Stun_time" to="." method="_on_Stun_time_timeout"]

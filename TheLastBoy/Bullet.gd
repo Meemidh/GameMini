@@ -21,3 +21,8 @@ func _physics_process(delta):
 func _on_Bullet_body_entered(body):
 	if body.name == "player":
 		$"/root/HUD".hp -= 5
+
+
+func _on_Area2D_area_entered(area):
+	if area.is_in_group("knives"):
+		queue_free()
