@@ -17,5 +17,5 @@ func _ready():
 
 
 func _on_BACK3_pressed():
-	get_tree().change_scene("res://kitchen.tscn")
+	get_tree().change_scene("res://ครัว2.tscn")
 	$"/root/HUD"/HpBar.visible = true

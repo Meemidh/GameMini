@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://ฟ้อน/slkscr.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://RichTextLabel.gd" type="Script" id=2]
+[ext_resource path="res://diaryja.gd" type="Script" id=3]
+[ext_resource path="res://ฟ้อน/maaja/maaja ver 1.00.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Button.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 45
+font_data = ExtResource( 4 )
+
+[node name="dont" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2( -3.8147e-06, 0.264832 )
+color = Color( 0.0901961, 0.0745098, 0.0745098, 1 )
+polygon = PoolVector2Array( 0.475464, -3.18925, -1.41229, 802.879, 1202.97, 795.328, 1199.2, -1.30151 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color( 1, 0.858824, 0.858824, 1 )
+position = Vector2( 76.1298, 315.977 )
+scale = Vector2( 0.897683, 0.131204 )
+color = Color( 0.266667, 0.239216, 0.239216, 1 )
+polygon = PoolVector2Array( -0.760803, -1.51344, -4.28421, 392.802, -5.88531, 837.993, 596.77, 845.914, 605.604, 845.914, 1196.97, 823.502, 1199.75, 11.4373 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 1029.67
+margin_top = 727.031
+margin_right = 1157.67
+margin_bottom = 774.031
+custom_fonts/font = SubResource( 2 )
+toggle_mode = true
+text = "BACK"
+flat = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.07
+autostart = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 107.091
+margin_top = 336.592
+margin_right = 1108.09
+margin_bottom = 411.592
+custom_fonts/normal_font = SubResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="Button" method="_on_Backkit_pressed"]
+[connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_Timer_timeout"]

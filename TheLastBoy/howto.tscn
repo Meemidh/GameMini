@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://เพิ่มเติม/sprite_31.png" type="Texture" id=1]
 [ext_resource path="res://ฉาก/howto2.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://เพิ่มเติม/sprite21.png" type="Texture" id=7]
 [ext_resource path="res://BACK.tscn" type="PackedScene" id=8]
 [ext_resource path="res://howto.gd" type="Script" id=9]
+[ext_resource path="res://BACKstart.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -224,6 +225,7 @@ margin_left = 1011.24
 margin_top = 719.351
 margin_right = 1191.24
 margin_bottom = 776.351
+script = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 307.554
@@ -235,3 +237,6 @@ text = "HOW TO PLAY"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="how" type="AudioStreamPlayer" parent="."]
+[connection signal="pressed" from="BACK" to="BACK" method="_on_BACKst_pressed"]

@@ -22,7 +22,7 @@ func _ready():
 
 func _on_item_body_entered(body):
 	if body.name == "player":
-		$"/root/HUD".hp += 10
+		$"/root/HUD".hp += 5
 		$item1.play()
 		
 

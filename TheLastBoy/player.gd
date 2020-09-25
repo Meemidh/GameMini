@@ -56,10 +56,13 @@ func _physics_process(delta):
 		
 		velocity = move_and_slide(velocity,Floor)
 	
+	
 	if $"/root/HUD".hp <= 0:
-		$AnimatedSprite.play("die")
-		is_dead = true
-
+				$"/root/Hpenemy"/hpenemy.visible = false
+				$AnimatedSprite.play("die")
+				is_dead = true
+		
+				
 func _on_AnimatedSprite_animation_finished():
 	if $AnimatedSprite.animation == "attack":
 		$AttackArea/CollisionAttack.disabled = true

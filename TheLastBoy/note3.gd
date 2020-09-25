@@ -16,3 +16,7 @@ func _ready():
 
 func _on_Timer3_timeout():
 	set_visible_characters(get_visible_characters()+1)
+
+
+func _on_note3_input_event(viewport, event, shape_idx):
+	pass # Replace with function body.

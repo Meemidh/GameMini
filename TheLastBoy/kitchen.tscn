@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://note.tscn" type="PackedScene" id=1]
 [ext_resource path="res://miti.tscn" type="PackedScene" id=2]
@@ -7,9 +7,26 @@
 [ext_resource path="res://เพิ่มเติม/By Ayene-chan.png" type="Texture" id=5]
 [ext_resource path="res://เพิ่มเติม/ครัว1.1.png" type="Texture" id=6]
 [ext_resource path="res://gotonote3.gd" type="Script" id=7]
-[ext_resource path="res://ฉาก/ห้องนอน/miti.png" type="Texture" id=8]
+[ext_resource path="res://ฉาก/ครัวจ้า.png" type="Texture" id=8]
 [ext_resource path="res://player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://miti1.gd" type="Script" id=10]
+[ext_resource path="res://เพิ่มเติม/d6c12f29ad20f622.png" type="Texture" id=11]
+[ext_resource path="res://เพิ่มเติม/fedd0be285a896ca.png" type="Texture" id=12]
+[ext_resource path="res://เพิ่มเติม/1467ce4dd2004af1.png" type="Texture" id=13]
+[ext_resource path="res://เพิ่มเติม/เคาเตอร์.png" type="Texture" id=14]
+[ext_resource path="res://เพิ่มเติม/e7fd70a582ed38c0.png" type="Texture" id=15]
+[ext_resource path="res://เพิ่มเติม/ครัว.png" type="Texture" id=16]
+[ext_resource path="res://เพิ่มเติม/a6401dbada7dea73.png" type="Texture" id=17]
+[ext_resource path="res://apple.tscn" type="PackedScene" id=18]
+[ext_resource path="res://knife.tscn" type="PackedScene" id=19]
+[ext_resource path="res://item.tscn" type="PackedScene" id=20]
+[ext_resource path="res://เพิ่มเติม/หน้าต่าง.png" type="Texture" id=21]
+[ext_resource path="res://quest.tscn" type="PackedScene" id=22]
+[ext_resource path="res://knife11.gd" type="Script" id=23]
+[ext_resource path="res://เพิ่มเติม/mommom.png" type="Texture" id=24]
+[ext_resource path="res://เพิ่มเติม/sister1.png" type="Texture" id=25]
+[ext_resource path="res://เพิ่มเติม/daddad.png" type="Texture" id=26]
+[ext_resource path="res://momghost2.tscn" type="PackedScene" id=27]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -56,23 +73,17 @@ extents = Vector2( 138.196, 179.424 )
 
 [node name="kitchen" type="Node2D"]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ครัว2" type="ParallaxBackground" parent="."]
 
-[node name="block" type="TileMap" parent="ParallaxBackground"]
+[node name="block" type="TileMap" parent="ครัว2"]
 tile_set = SubResource( 2 )
 format = 1
-tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0, -65510, 0, 0, -65509, 0, 0, -65508, 0, 0, -65507, 0, 0, -65506, 0, 0, -65505, 0, 0, -65504, 0, 0, -65503, 0, 0, -65502, 0, 0, -65501, 0, 0, -65500, 0, 0, -65499, 0, 0, -65498, 0, 0, 65535, 0, 0, 38, 0, 0, 131071, 0, 0, 65574, 0, 0, 196607, 0, 0, 131110, 0, 0, 262143, 0, 0, 196646, 0, 0, 327679, 0, 0, 262182, 0, 0, 393215, 0, 0, 327718, 0, 0, 458751, 0, 0, 393254, 0, 0, 524287, 0, 0, 458790, 0, 0, 589823, 0, 0, 524326, 0, 0, 655359, 0, 0, 589862, 0, 0, 720895, 0, 0, 655398, 0, 0, 786431, 0, 0, 720934, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0, 786470, 0, 0 )
+tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0, -65510, 0, 0, -65509, 0, 0, -65508, 0, 0, -65507, 0, 0, -65506, 0, 0, -65505, 0, 0, -65504, 0, 0, -65503, 0, 0, -65502, 0, 0, -65501, 0, 0, -65500, 0, 0, -65499, 0, 0, 65535, 0, 0, 37, 0, 0, 131071, 0, 0, 65573, 0, 0, 196607, 0, 0, 131109, 0, 0, 262143, 0, 0, 196645, 0, 0, 327679, 0, 0, 262181, 0, 0, 393215, 0, 0, 327717, 0, 0, 458751, 0, 0, 393253, 0, 0, 524287, 0, 0, 458789, 0, 0, 589823, 0, 0, 524325, 0, 0, 655359, 0, 0, 589861, 0, 0, 720895, 0, 0, 655397, 0, 0, 786431, 0, 0, 720933, 0, 0, 851967, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 0, 786461, 0, 0, 786462, 0, 0, 786463, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 786467, 0, 0, 786468, 0, 0, 786469, 0, 0 )
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1200, 0 )
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ครัว2"]
 
-[node name="note3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 732.819, 665.223 )
-script = ExtResource( 7 )
-
-[node name="miti" type="Sprite" parent="."]
-visible = false
-position = Vector2( 2271.28, 422.62 )
+[node name="ครัวจ้า" type="Sprite" parent="ครัว2/ParallaxLayer"]
+position = Vector2( 1211.24, 403.657 )
 texture = ExtResource( 8 )
 
 [node name="kitdoor2" type="Area2D" parent="."]
@@ -81,20 +92,107 @@ scale = Vector2( 1.1, 1.1 )
 script = ExtResource( 4 )
 
 [node name="e97076b43bf929e3" type="Sprite" parent="kitdoor2"]
-position = Vector2( -337.934, 122.186 )
+position = Vector2( -340.096, 125.429 )
 scale = Vector2( 0.909091, 0.909091 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="kitdoor2"]
-position = Vector2( -338.182, 125.455 )
+position = Vector2( -346.471, 131.584 )
 shape = SubResource( 3 )
 
 [node name="miti2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2277.53, 411.98 )
+position = Vector2( 2259.03, 390.117 )
 script = ExtResource( 10 )
 
+[node name="a6401dbada7dea73" type="Sprite" parent="."]
+position = Vector2( 729.118, 215.882 )
+scale = Vector2( 1.1, 1.3 )
+texture = ExtResource( 17 )
+
+[node name="a6401dbada7dea74" type="Sprite" parent="."]
+position = Vector2( 1588.91, 213.504 )
+scale = Vector2( 1.1, 1.3 )
+texture = ExtResource( 17 )
+
+[node name="ตู้เย็น" type="Sprite" parent="."]
+position = Vector2( 520.643, 420.816 )
+scale = Vector2( 1.1, 1 )
+texture = ExtResource( 12 )
+
+[node name="daddad" type="Sprite" parent="."]
+position = Vector2( 249.934, 612.426 )
+scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 26 )
+
+[node name="mommom" type="Sprite" parent="."]
+position = Vector2( 1424.06, 643.833 )
+scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 24 )
+
+[node name="เคาเตอร์" type="Sprite" parent="."]
+position = Vector2( 1156.82, 535.713 )
+scale = Vector2( 1, 1.3 )
+texture = ExtResource( 11 )
+
+[node name="กระทะ" type="Sprite" parent="."]
+position = Vector2( 1186.28, 413.553 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 15 )
+
+[node name="ครัว" type="Sprite" parent="."]
+position = Vector2( 1555.04, 365.438 )
+texture = ExtResource( 16 )
+
+[node name="เคาเตอร์2" type="Sprite" parent="."]
+position = Vector2( 1153.14, 205.784 )
+texture = ExtResource( 14 )
+
+[node name="sister1" type="Sprite" parent="."]
+position = Vector2( 1768.68, 610.504 )
+scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 25 )
+
+[node name="อ่าง" type="Sprite" parent="."]
+position = Vector2( 707.366, 399.981 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 13 )
+
+[node name="note3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 564.244, 691.868 )
+script = ExtResource( 7 )
+
+[node name="หน้าต่าง" type="Sprite" parent="."]
+position = Vector2( 1942.5, 218.665 )
+texture = ExtResource( 21 )
+
+[node name="quest" parent="." instance=ExtResource( 22 )]
+position = Vector2( -57.098, 190.557 )
+
+[node name="quest2" parent="." instance=ExtResource( 22 )]
+position = Vector2( 777.287, -114.315 )
+
+[node name="momghost2" parent="." instance=ExtResource( 27 )]
+position = Vector2( 157.961, -677.447 )
+scale = Vector2( 1.7, 1.7 )
+
+[node name="item" parent="." instance=ExtResource( 20 )]
+position = Vector2( 482.756, 183.342 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="apple" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1305.33, 421.373 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="apple2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1075.49, 421.373 )
+scale = Vector2( 1.2, 1.2 )
+
+[node name="knife" parent="." instance=ExtResource( 19 )]
+position = Vector2( 1397.73, 396.361 )
+script = ExtResource( 23 )
+
 [node name="player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 388.269, 420.254 )
+position = Vector2( 356.521, 575.115 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -103,6 +201,10 @@ limit_left = 0
 limit_top = 0
 limit_right = 2400
 limit_bottom = 0
-[connection signal="input_event" from="note3" to="note3" method="_on_gotonote3_input_event"]
 [connection signal="input_event" from="kitdoor2" to="kitdoor2" method="_on_kitdoorout_input_event"]
 [connection signal="input_event" from="miti2" to="miti2" method="_on_miti1_input_event"]
+[connection signal="input_event" from="note3" to="note3" method="_on_gotonote3_input_event"]
+[connection signal="body_entered" from="momghost2" to="momghost2" method="_on_momghost2_body_entered"]
+[connection signal="body_entered" from="apple" to="apple" method="_on_apple_body_entered"]
+[connection signal="body_entered" from="apple2" to="apple2" method="_on_apple_body_entered"]
+[connection signal="input_event" from="knife" to="knife" method="_on_knife11_input_event"]

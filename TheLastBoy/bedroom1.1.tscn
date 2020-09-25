@@ -128,6 +128,6 @@ shape = SubResource( 4 )
 [node name="diary" parent="bedroom" instance=ExtResource( 11 )]
 
 [node name="player" parent="bedroom" instance=ExtResource( 12 )]
-position = Vector2( 968, 416 )
+position = Vector2( 888.804, 572.978 )
 scale = Vector2( 2.7, 2.7 )
 [connection signal="input_event" from="bedroom/block/ประตูวิน" to="bedroom/block/ประตูวิน" method="_on__vindoor_input_event"]

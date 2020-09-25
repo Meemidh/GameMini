@@ -40,10 +40,10 @@ __meta__ = {
 }
 
 [node name="start" type="Button" parent="."]
-margin_left = 88.0
-margin_top = 368.0
-margin_right = 334.0
-margin_bottom = 445.0
+margin_left = 86.8108
+margin_top = 369.189
+margin_right = 332.811
+margin_bottom = 446.189
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
 flat = true

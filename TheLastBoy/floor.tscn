@@ -111,11 +111,11 @@ scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 9 )
 
 [node name="momghost1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 785.957, -644.574 )
+position = Vector2( 1221.33, -646.288 )
 scale = Vector2( 1.7, 1.7 )
 
 [node name="player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 1995.57, 417.45 )
+position = Vector2( 1898.06, 577.59 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]

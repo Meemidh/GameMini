@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://ฉาก/block/sokoban_tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://เพิ่มเติม/bed2.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://เพิ่มเติม/249bf6e13679ba71.png" type="Texture" id=11]
 [ext_resource path="res://sisghost1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://เพิ่มเติม/1e2291f1e4c9cf29.png" type="Texture" id=13]
+[ext_resource path="res://quest.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -96,7 +97,10 @@ scale = Vector2( 1.1, 1.1 )
 position = Vector2( -350.974, -513.895 )
 scale = Vector2( 1.6, 1.6 )
 
+[node name="quest" parent="." instance=ExtResource( 14 )]
+position = Vector2( 440.165, 239.383 )
+
 [node name="player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 224.634, 418.062 )
+position = Vector2( 97.382, 573.032 )
 scale = Vector2( 2.7, 2.7 )
 [connection signal="input_event" from="sisdoor" to="sisdoor" method="_on_sisdoorout_input_event"]

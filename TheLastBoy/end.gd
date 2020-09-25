@@ -17,5 +17,4 @@ func _ready():
 #	pass
 
 
-func _on_end_finished():
-	get_tree().change_scene("res://Main.tscn")
+

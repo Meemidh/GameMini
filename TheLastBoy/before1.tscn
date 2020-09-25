@@ -59,7 +59,7 @@ position = Vector2( 2856, 672 )
 script = ExtResource( 6 )
 
 [node name="player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 2760, 408 )
+position = Vector2( 2772.6, 574.31 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]

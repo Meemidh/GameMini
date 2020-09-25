@@ -18,5 +18,5 @@ func _ready():
 
 func _on_miti1_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton && event.is_pressed(): 
-		get_tree().change_scene("res://beforboss.tscn")
+		get_tree().change_scene("res://ห้ามเข้า.tscn")
 
