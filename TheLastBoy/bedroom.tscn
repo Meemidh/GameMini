@@ -144,27 +144,24 @@ position = Vector2( 478.704, 473.251 )
 scale = Vector2( 1.2, 1.2 )
 
 [node name="player" parent="." instance=ExtResource( 12 )]
-visible = false
 position = Vector2( 159.117, 574.656 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
-visible = false
 color = Color( 0, 0, 0, 1 )
 polygon = PoolVector2Array( 1033.23, 622.448, 1033.43, 658.958, 1055.26, 659.553, 1061.42, 666.766, 1064.98, 658.76, 1081.84, 658.76, 1082.24, 619.471, 1033.23, 619.868 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
 position = Vector2( 252.903, 160.958 )
 scale = Vector2( 0.760356, 0.757938 )
 polygon = PoolVector2Array( 1030.96, 608.875, 1030.7, 651.809, 1056.15, 652.211, 1062.9, 664.947, 1066.19, 652.071, 1066.46, 651.809, 1082.11, 651.809, 1085.77, 652.071, 1085.37, 608.386, 1058.1, 608.613 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Polygon2D"]
-visible = false
 position = Vector2( 1059.13, 631.669 )
 scale = Vector2( 0.881676, 0.739727 )
 frames = SubResource( 5 )
 animation = "idle"
+frame = 1
 playing = true
 [connection signal="input_event" from="bedroom/block/ประตูวิน" to="bedroom/block/ประตูวิน" method="_on__vindoor_input_event"]
 [connection signal="body_entered" from="med" to="med" method="_on_med_body_entered"]

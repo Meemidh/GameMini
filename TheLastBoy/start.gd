@@ -19,5 +19,5 @@ func _ready():
 func _on_start_pressed():
 	$"/root/HUD"/HpBar.visible = true 
 	$"/root/HUD".hp = 5
-	get_tree().change_scene("res://bedroom.tscn")
+	get_tree().change_scene("res://wake.tscn")
 

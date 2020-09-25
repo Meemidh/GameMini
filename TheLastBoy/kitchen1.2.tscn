@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://เพิ่มเติม/หน้าต่าง.png" type="Texture" id=1]
 [ext_resource path="res://เพิ่มเติม/d6c12f29ad20f622.png" type="Texture" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://เพิ่มเติม/sister1.png" type="Texture" id=23]
 [ext_resource path="res://เพิ่มเติม/daddad.png" type="Texture" id=24]
 [ext_resource path="res://sisghost2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://character/Voice_game/เข้าประตูมิติ_2.wav" type="AudioStream" id=26]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -70,6 +71,9 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 extents = Vector2( 138.196, 179.424 )
 
 [node name="kitchen" type="Node2D"]
+
+[node name="door" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
 
 [node name="ครัว2" type="ParallaxBackground" parent="."]
 
@@ -196,6 +200,7 @@ limit_right = 2400
 limit_bottom = 0
 [connection signal="input_event" from="kitdoor2" to="kitdoor2" method="_on_kitdoorout_input_event"]
 [connection signal="input_event" from="miti2" to="miti2" method="_on_miti2_input_event"]
+[connection signal="mouse_entered" from="miti2" to="miti2" method="_on_miti2_mouse_entered"]
 [connection signal="body_entered" from="sisghost2" to="sisghost2" method="_on_sisghost2_body_entered"]
 [connection signal="input_event" from="note3" to="note3" method="_on_note312_input_event"]
 [connection signal="body_entered" from="apple" to="apple" method="_on_apple_body_entered"]

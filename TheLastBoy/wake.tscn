@@ -1,0 +1,46 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://ปก2/0.png" type="Texture" id=1]
+[ext_resource path="res://ปก2/0.8.png" type="Texture" id=2]
+[ext_resource path="res://ปก2/1.png" type="Texture" id=3]
+[ext_resource path="res://ปก2/2.png" type="Texture" id=4]
+[ext_resource path="res://ปก2/0.6.png" type="Texture" id=5]
+[ext_resource path="res://ปก2/0.7.png" type="Texture" id=6]
+[ext_resource path="res://ปก2/0.9.png" type="Texture" id=7]
+[ext_resource path="res://ปก2/6.png" type="Texture" id=8]
+[ext_resource path="res://ปก2/7.png" type="Texture" id=9]
+[ext_resource path="res://ปก2/8.png" type="Texture" id=10]
+[ext_resource path="res://ปก2/4.png" type="Texture" id=11]
+[ext_resource path="res://ปก2/5.png" type="Texture" id=12]
+[ext_resource path="res://ปก2/3.png" type="Texture" id=13]
+[ext_resource path="res://wake.gd" type="Script" id=14]
+[ext_resource path="res://ปก2/10.png" type="Texture" id=15]
+[ext_resource path="res://character/Voice_game/ตัวเอก/ตื่น.wav" type="AudioStream" id=16]
+[ext_resource path="res://ปก2/9.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "wake",
+"speed": 16.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "wake2",
+"speed": 2.5
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 14 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 601.255, 398.576 )
+scale = Vector2( 1, 1.00199 )
+frames = SubResource( 1 )
+animation = "wake2"
+playing = true
+
+[node name="wake" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+[connection signal="finished" from="wake" to="." method="_on_wake_finished"]

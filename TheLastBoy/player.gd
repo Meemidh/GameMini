@@ -51,6 +51,7 @@ func _physics_process(delta):
 		
 		if Input.is_action_just_pressed("attack"):
 			$AnimatedSprite.play("attack")
+			$fan.play()
 			isAttacking = true
 			$AttackArea/CollisionAttack.disabled = false
 		

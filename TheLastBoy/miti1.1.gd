@@ -19,3 +19,8 @@ func _ready():
 func _on_miti2_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton && event.is_pressed(): 
 		get_tree().change_scene("res://beforboss.tscn")
+		
+
+
+func _on_miti2_mouse_entered():
+	$door.play()
