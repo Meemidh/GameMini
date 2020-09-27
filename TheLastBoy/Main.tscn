@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ฟ้อน/slkscreb.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://start.gd" type="Script" id=2]
@@ -7,17 +7,24 @@
 [ext_resource path="res://how to.gd" type="Script" id=5]
 [ext_resource path="res://Main.gd" type="Script" id=6]
 [ext_resource path="res://character/Voice_game/lalala (online-audio-converter.com).wav" type="AudioStream" id=7]
+[ext_resource path="res://ฉาก/ปก.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 70
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 70
+size = 65
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 70
+size = 58
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="Main" type="Control"]
@@ -28,22 +35,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="start2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -8.0
+pitch_scale = 0.9
+autoplay = true
+
+[node name="ปก" type="Sprite" parent="."]
+position = Vector2( 603.062, 391.903 )
+texture = ExtResource( 8 )
+
 [node name="Label" type="Label" parent="."]
-margin_left = 224.0
-margin_top = 144.0
-margin_right = 961.0
-margin_bottom = 215.0
+margin_left = 46.021
+margin_top = 66.0384
+margin_right = 845.021
+margin_bottom = 142.038
 custom_fonts/font = SubResource( 1 )
-text = "T็he Last Boy"
+text = "The Last Boy"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="start" type="Button" parent="."]
-margin_left = 86.8108
-margin_top = 369.189
-margin_right = 332.811
-margin_bottom = 446.189
+margin_left = 17.6935
+margin_top = 214.647
+margin_right = 263.694
+margin_bottom = 291.647
 custom_fonts/font = SubResource( 2 )
 text = "PLAY"
 flat = true
@@ -52,24 +69,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="quit" type="Button" parent="."]
-margin_left = 80.0
-margin_top = 632.0
-margin_right = 326.0
-margin_bottom = 709.0
-custom_fonts/font = SubResource( 2 )
-text = "quit"
-flat = true
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="how to" type="Button" parent="."]
-margin_left = 88.0
-margin_top = 504.0
-margin_right = 709.0
-margin_bottom = 581.0
+margin_left = -35.4896
+margin_top = 346.195
+margin_right = 585.511
+margin_bottom = 423.195
 custom_fonts/font = SubResource( 3 )
 toggle_mode = true
 text = "HOW TO PLAY"
@@ -79,11 +83,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="start2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
-volume_db = -8.0
-pitch_scale = 0.9
-autoplay = true
+[node name="quit" type="Button" parent="."]
+margin_left = 271.299
+margin_top = 502.756
+margin_right = 517.299
+margin_bottom = 579.756
+custom_fonts/font = SubResource( 2 )
+text = "quit"
+flat = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="start" to="start" method="_on_start_pressed"]
-[connection signal="button_up" from="quit" to="quit" method="_on_quit_button_up"]
 [connection signal="pressed" from="how to" to="how to" method="_on_how_to_pressed"]
+[connection signal="button_up" from="quit" to="quit" method="_on_quit_button_up"]

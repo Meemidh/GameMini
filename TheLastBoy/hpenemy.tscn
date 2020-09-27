@@ -21,6 +21,7 @@ margin_left = 445.681
 margin_top = -1.76577
 margin_right = 800.681
 margin_bottom = 52.2342
+max_value = 300.0
 texture_under = ExtResource( 2 )
 texture_progress = ExtResource( 1 )
 tint_progress = Color( 0.627451, 0.254902, 0.552941, 1 )

@@ -20,15 +20,15 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "wake",
-"speed": 16.0
-}, {
 "frames": [ ExtResource( 5 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "wake2",
 "speed": 2.5
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 15 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "wake",
+"speed": 16.0
 } ]
 
 [node name="Node2D" type="Node2D"]
@@ -39,8 +39,10 @@ position = Vector2( 601.255, 398.576 )
 scale = Vector2( 1, 1.00199 )
 frames = SubResource( 1 )
 animation = "wake2"
+frame = 1
 playing = true
 
 [node name="wake" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
+volume_db = 10.0
 [connection signal="finished" from="wake" to="." method="_on_wake_finished"]

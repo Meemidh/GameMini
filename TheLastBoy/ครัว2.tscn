@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://เพิ่มเติม/หน้าต่าง.png" type="Texture" id=1]
 [ext_resource path="res://เพิ่มเติม/d6c12f29ad20f622.png" type="Texture" id=2]
@@ -24,6 +24,10 @@
 [ext_resource path="res://เพิ่มเติม/sister1.png" type="Texture" id=22]
 [ext_resource path="res://เพิ่มเติม/mommom.png" type="Texture" id=23]
 [ext_resource path="res://เพิ่มเติม/daddad.png" type="Texture" id=24]
+[ext_resource path="res://character/Voice_game/ProSensory (online-audio-converter.com).wav" type="AudioStream" id=25]
+[ext_resource path="res://ครัว2.gd" type="Script" id=26]
+[ext_resource path="res://item.tscn" type="PackedScene" id=27]
+[ext_resource path="res://apple.tscn" type="PackedScene" id=28]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -69,6 +73,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 extents = Vector2( 138.196, 179.424 )
 
 [node name="kit" type="Node2D"]
+script = ExtResource( 26 )
 
 [node name="ครัว2" type="ParallaxBackground" parent="."]
 
@@ -80,7 +85,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ครัว2"]
 
 [node name="ครัวจ้า" type="Sprite" parent="ครัว2/ParallaxLayer"]
-position = Vector2( 1211.24, 403.657 )
+position = Vector2( 1190.55, 402.99 )
 texture = ExtResource( 13 )
 
 [node name="kitdoor2" type="Area2D" parent="."]
@@ -169,6 +174,22 @@ script = ExtResource( 21 )
 position = Vector2( 561.539, 713.57 )
 script = ExtResource( 18 )
 
+[node name="hor5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = 5.0
+
+[node name="item" parent="." instance=ExtResource( 27 )]
+position = Vector2( 552.663, 180.356 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="item2" parent="." instance=ExtResource( 27 )]
+position = Vector2( 1303.77, 415.33 )
+scale = Vector2( 0.9, 0.9 )
+
+[node name="apple" parent="." instance=ExtResource( 28 )]
+position = Vector2( 814.71, 423.975 )
+scale = Vector2( 1.1, 1.1 )
+
 [node name="player" parent="." instance=ExtResource( 19 )]
 position = Vector2( 359.473, 575.549 )
 scale = Vector2( 2.7, 2.7 )
@@ -183,3 +204,4 @@ limit_bottom = 0
 [connection signal="input_event" from="miti2" to="miti2" method="_on_miti1_input_event"]
 [connection signal="input_event" from="knife" to="knife" method="_on_knife2_input_event"]
 [connection signal="input_event" from="note311" to="note311" method="_on_note311_input_event"]
+[connection signal="body_entered" from="apple" to="apple" method="_on_apple_body_entered"]

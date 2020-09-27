@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://miti.tscn" type="PackedScene" id=1]
 [ext_resource path="res://goton4.gd" type="Script" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://ฉาก/ลองบอส2.png" type="Texture" id=7]
 [ext_resource path="res://ฉาก/block/sokoban_tilesheet.png" type="Texture" id=8]
 [ext_resource path="res://fatherghost3.tscn" type="PackedScene" id=9]
-[ext_resource path="res://sisghost3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://beforboss.gd" type="Script" id=10]
 [ext_resource path="res://momghost3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://character/Voice_game/ดนตรี_horror2.wav" type="AudioStream" id=13]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -39,6 +40,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/z_index = 0
 
 [node name="boss" type="Node2D"]
+script = ExtResource( 10 )
 
 [node name="before" type="ParallaxBackground" parent="."]
 
@@ -50,21 +52,17 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="ParallaxLayer" type="ParallaxLayer" parent="before"]
 
 [node name="ลองบอส2" type="Sprite" parent="before/ParallaxLayer"]
-position = Vector2( 1624, 392 )
-scale = Vector2( 1.35, 1 )
+position = Vector2( 1617.64, 397.5 )
+scale = Vector2( 1.3553, 1.01375 )
 texture = ExtResource( 7 )
 
 [node name="momghost3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 832, -640 )
+position = Vector2( 1827.3, -627.301 )
 scale = Vector2( 1.7, 1.7 )
 
 [node name="fatherghost3" parent="." instance=ExtResource( 9 )]
-position = Vector2( 88, -632 )
+position = Vector2( 748, -606 )
 scale = Vector2( 1.7, 1.7 )
-
-[node name="sisghost3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 1712, -488 )
-scale = Vector2( 1.6, 1.6 )
 
 [node name="miti" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3040, 448 )
@@ -89,8 +87,11 @@ limit_left = 0
 limit_top = 0
 limit_right = 3200
 limit_bottom = 0
+
+[node name="hor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+volume_db = 5.0
 [connection signal="body_entered" from="momghost3" to="momghost3" method="_on_momghost3_body_entered"]
 [connection signal="body_entered" from="fatherghost3" to="fatherghost3" method="_on_fatherghost3_body_entered"]
-[connection signal="body_entered" from="sisghost3" to="sisghost3" method="_on_sisghost3_body_entered"]
 [connection signal="input_event" from="miti" to="miti" method="_on_miti_input_event"]
 [connection signal="input_event" from="note4" to="note4" method="_on_gonote4_input_event"]

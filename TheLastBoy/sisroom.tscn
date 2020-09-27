@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://ฉาก/block/sokoban_tilesheet.png" type="Texture" id=1]
 [ext_resource path="res://เพิ่มเติม/bed2.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://sisghost1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://เพิ่มเติม/1e2291f1e4c9cf29.png" type="Texture" id=13]
 [ext_resource path="res://quest.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sisroom.gd" type="Script" id=15]
+[ext_resource path="res://character/Voice_game/Kim Lightyear - Now Or Never.wav" type="AudioStream" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -42,6 +44,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/z_index = 0
 
 [node name="sisroom" type="Node2D"]
+script = ExtResource( 15 )
 
 [node name="sisr" type="ParallaxBackground" parent="."]
 
@@ -103,4 +106,8 @@ position = Vector2( 440.165, 239.383 )
 [node name="player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 97.382, 573.032 )
 scale = Vector2( 2.7, 2.7 )
+
+[node name="sisp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = 9.0
 [connection signal="input_event" from="sisdoor" to="sisdoor" method="_on_sisdoorout_input_event"]

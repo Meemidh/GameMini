@@ -27,3 +27,6 @@ func _on_milk_body_entered(body):
 
 func _on_eat_finished():
 	queue_free()
+
+
+

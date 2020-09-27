@@ -30,7 +30,7 @@ script = ExtResource( 10 )
 position = Vector2( 363.076, 696.786 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 6
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,6 +39,5 @@ shape = SubResource( 2 )
 
 [node name="mom2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
-volume_db = 10.0
-pitch_scale = 1.05
+volume_db = 9.0
 [connection signal="finished" from="mom2" to="." method="_on_mom2_finished"]

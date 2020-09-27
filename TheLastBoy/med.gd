@@ -28,3 +28,5 @@ func _on_med_body_entered(body):
 
 func _on_eat_finished():
 	queue_free()
+
+

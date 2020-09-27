@@ -10,7 +10,7 @@ extends Node2D
 func _ready():
 	$"/root/HUD"/HpBar.visible = false
 	$"/root/Hpenemy"/hpenemy.visible = false
-
+	$how.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 
-var boss_hp = 100
-var bcurrent_hp = 100
+var boss_hp = 300
+var bcurrent_hp = 300
 
 func _ready():
 	pass 
@@ -15,5 +15,5 @@ func _process(delta):
 	
 	if boss_hp == 0:
 		$hpenemy.visible = false
-		$"/root/Hpenemy".boss_hp = 100
+		$"/root/Hpenemy".boss_hp = 300
 		get_tree().change_scene("res://end.tscn")

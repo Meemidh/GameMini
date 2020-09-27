@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://note.tscn" type="PackedScene" id=1]
 [ext_resource path="res://miti.tscn" type="PackedScene" id=2]
@@ -27,6 +27,10 @@
 [ext_resource path="res://เพิ่มเติม/sister1.png" type="Texture" id=25]
 [ext_resource path="res://เพิ่มเติม/daddad.png" type="Texture" id=26]
 [ext_resource path="res://momghost2.tscn" type="PackedScene" id=27]
+[ext_resource path="res://kitchen.gd" type="Script" id=28]
+[ext_resource path="res://character/Voice_game/ตัวเอก/ตกใจ.wav" type="AudioStream" id=29]
+[ext_resource path="res://character/Voice_game/ProSensory (online-audio-converter.com).wav" type="AudioStream" id=30]
+[ext_resource path="res://milk.tscn" type="PackedScene" id=31]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -72,6 +76,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 extents = Vector2( 138.196, 179.424 )
 
 [node name="kitchen" type="Node2D"]
+script = ExtResource( 28 )
 
 [node name="ครัว2" type="ParallaxBackground" parent="."]
 
@@ -83,7 +88,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ครัว2"]
 
 [node name="ครัวจ้า" type="Sprite" parent="ครัว2/ParallaxLayer"]
-position = Vector2( 1211.24, 403.657 )
+position = Vector2( 1196.97, 403.657 )
 texture = ExtResource( 8 )
 
 [node name="kitdoor2" type="Area2D" parent="."]
@@ -179,17 +184,28 @@ scale = Vector2( 1.7, 1.7 )
 position = Vector2( 482.756, 183.342 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="apple" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1305.33, 421.373 )
+[node name="apple2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1089.46, 424.117 )
 scale = Vector2( 1.2, 1.2 )
 
-[node name="apple2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 1075.49, 421.373 )
-scale = Vector2( 1.2, 1.2 )
+[node name="item" parent="apple2" instance=ExtResource( 20 )]
+position = Vector2( 191.629, -10.3569 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="knife" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1397.73, 396.361 )
 script = ExtResource( 23 )
+
+[node name="tokjai" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+volume_db = 10.0
+
+[node name="hor3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = 5.0
+
+[node name="med" parent="." instance=ExtResource( 31 )]
+position = Vector2( 1912.01, 587.69 )
 
 [node name="player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 356.521, 575.115 )
@@ -205,6 +221,6 @@ limit_bottom = 0
 [connection signal="input_event" from="miti2" to="miti2" method="_on_miti1_input_event"]
 [connection signal="input_event" from="note3" to="note3" method="_on_gotonote3_input_event"]
 [connection signal="body_entered" from="momghost2" to="momghost2" method="_on_momghost2_body_entered"]
-[connection signal="body_entered" from="apple" to="apple" method="_on_apple_body_entered"]
 [connection signal="body_entered" from="apple2" to="apple2" method="_on_apple_body_entered"]
 [connection signal="input_event" from="knife" to="knife" method="_on_knife11_input_event"]
+[connection signal="body_entered" from="med" to="med" method="_on_med_body_entered"]
