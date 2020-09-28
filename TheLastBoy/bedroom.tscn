@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://ฉาก/ห้องนอน/efef.png" type="Texture" id=1]
 [ext_resource path="res://ฉาก/ห้องนอน/4b358374c97e0845.png" type="Texture" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://milk.tscn" type="PackedScene" id=13]
 [ext_resource path="res://เพิ่มเติม/คำถาม.png" type="Texture" id=14]
 [ext_resource path="res://เพิ่มเติม/คำถาม2.png" type="Texture" id=15]
+[ext_resource path="res://bedroom.gd" type="Script" id=16]
+[ext_resource path="res://character/Voice_game/roomRin (online-audio-converter.com).wav" type="AudioStream" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -84,6 +86,7 @@ animations = [ {
 } ]
 
 [node name="bedroom" type="Node2D"]
+script = ExtResource( 16 )
 
 [node name="bedroom" type="ParallaxBackground" parent="."]
 
@@ -161,7 +164,10 @@ position = Vector2( 1059.13, 631.669 )
 scale = Vector2( 0.881676, 0.739727 )
 frames = SubResource( 5 )
 animation = "idle"
-frame = 1
 playing = true
+
+[node name="bed1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = 5.0
 [connection signal="input_event" from="bedroom/block/ประตูวิน" to="bedroom/block/ประตูวิน" method="_on__vindoor_input_event"]
 [connection signal="body_entered" from="med" to="med" method="_on_med_body_entered"]
