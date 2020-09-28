@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://character/Voice_game/FightBoss.wav" type="AudioStream" id=1]
 [ext_resource path="res://boss.gd" type="Script" id=3]
 [ext_resource path="res://player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ฉาก/block/sokoban_tilesheet.png" type="Texture" id=6]
@@ -55,15 +54,13 @@ texture = ExtResource( 13 )
 position = Vector2( 3028.61, 563.026 )
 
 [node name="item" parent="." instance=ExtResource( 10 )]
-visible = false
 position = Vector2( 619.977, 722.209 )
 
 [node name="item2" parent="." instance=ExtResource( 10 )]
-visible = false
 position = Vector2( 906.032, 710.36 )
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 202.028, 574.546 )
+position = Vector2( 214.501, 414.184 )
 scale = Vector2( 2.7, 2.7 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -72,7 +69,3 @@ limit_left = 0
 limit_top = 0
 limit_right = 3200
 limit_bottom = 0
-
-[node name="boss" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-volume_db = -8.0

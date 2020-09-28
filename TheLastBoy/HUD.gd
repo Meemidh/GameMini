@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var hp = 5
-var current_hp = 100
+var current_hp = 150
 
 func _ready():
 	pass 
